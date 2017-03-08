@@ -24,8 +24,8 @@ $buttonVar.click(function(){
 			if ($("#reponse1").val()==="idea2")
 				{
 					console.log("Bravo!");
-					$('#reponse1').css(
-						"background-color", "green");
+					$('#reponse1').css
+					("background-color", "green");
 				}
 
 			else 
