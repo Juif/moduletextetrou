@@ -1,1 +1,48 @@
 
+@font-face {
+font-family: "Arial Rounded MT Bold";
+    src: url('font/ArialRoundedMTBold.ttf') format("embedded-opentype"),
+    url('font/ArialRoundedMTBold.ttf') format("woff2"),
+    url('font/ArialRoundedMTBold.ttf') format("woff"),
+    url('font/ArialRoundedMTBold.ttf') format("truetype"),
+    url('font/ArialRoundedMTBold.ttf') format("svg");
+}
+
+#title
+
+{
+border-radius: 5px;
+border: solid #e3e3e3 1px;
+font-family: "ArialRoundedMTbold";
+margin-top: 100px;
+text-align: center;
+padding-bottom: 60px;
+background-color: white;
+
+
+}
+
+html
+
+{
+  background-color: #ededed;
+}
+
+#progression_bar .bar_fixed 
+
+{
+	  margin-top: 60px;
+    border: 2px solid #ddd;
+    height: 17px;
+    
+    border-radius: 100px 0 0 100px;
+    z-index: 2;
+    background-color: white;
+}
+ul
+
+{
+
+    list-style: none;
+
+}
