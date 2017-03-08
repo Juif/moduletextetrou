@@ -17,3 +17,24 @@ $buttonVar.click(function(){
 }
 	})
 						});
+
+//bouton valider et compare les réponses
+	$("#boutonValider").click(function()
+		{
+			if ($("#reponse1").val()==="idea2")
+				{
+					console.log("Bravo!");
+					$('#reponse1').css(
+						"background-color", "green");
+				}
+
+			else 
+				{
+					console.log("Dommage!");
+					$('#reponse1').css(
+						"background-color", "red");
+				}
+		});
+
+
+});
