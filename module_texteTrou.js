@@ -1,9 +1,9 @@
 
 $(document).ready(function(){
-var hideTips= ["<li>indice premier</li> ", "<li>indice second</li>"];
+var hideTips= ["<li>indice premier</li> ", "<li>indice second</li>"];
 var i=0;
 var nmbreIndices = hideTips.length;
-$buttonVar=$('button');
+$buttonVar=$('.boutonIndice');
 $indiceVar=$('.indice')
 
 $buttonVar.click(function(){
@@ -15,8 +15,8 @@ $buttonVar.click(function(){
 
 
 }
-	})
-						});
+	
+
 
 //bouton valider et compare les réponses
 	$("#boutonValider").click(function()
@@ -37,4 +37,5 @@ $buttonVar.click(function(){
 		});
 
 
+})
 });
