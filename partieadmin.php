@@ -10,13 +10,17 @@
 
 <body>
 
-<form action="module_texteTrou2.html" method="post">
+<form action="partieadmin_post.php" method="post">
 	<p>
-	<label for="titre">Titre</label> : <input type="text" name="titre" id="titre"/>
-	<label for="exo">Exercice</label> : <input type="text" name="exo" id="exo"/>
-	<input type="submit" name="Sauvegarder"/>
+		<label for="titre">Titre</label> : <input type="text" name="titre" id="titre"/>
+	</p>
+	<p>
+		<label for="exo">Exercice</label> : <input type="text" name="exo" id="exo"/>
+	</p>
+	<p>
+		<input type="submit" name="Sauvegarder"/>
 	</p>
 </form>
-	
+
 </body>
 </html>
