@@ -17,6 +17,12 @@
 	<p>
 		<label for="exo">Exercice</label> : <input type="text" name="exo" id="exo"/>
 	</p>
+	
+	<p>
+		<label for="reponse01">Réponse 1</label> : <input type="text" name="reponse01" id="reponse01"/>
+		<label for="reponse2">Réponse 2</label> : <input type="text" name="reponse2" id="reponse2"/>
+		<label for="reponse3">Réponse 3</label> : <input type="text" name="reponse3" id="reponse3"/>
+	</p>
 	<p>
 		<input type="submit" name="Sauvegarder"/>
 	</p>
