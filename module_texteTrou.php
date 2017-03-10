@@ -19,6 +19,10 @@
 
 	</div>
 
+
+<button id="boutonAffExo1">Afficher exercice 1</button>
+<button id="boutonHideExo1">Cacher exercice 1</button>
+
 <?php
 
 try
@@ -31,24 +35,31 @@ catch(Exception $e)
 	}
 
 //Recuperation message
-$reponse = $bdd->query('SELECT titre, exo FROM admin ORDER BY id DESC LIMIT 0,10');
+$reponse = $bdd->query('SELECT titre, exo, reponse01, reponse2, reponse3 FROM admin ORDER BY id DESC LIMIT 0,10');
 
 //Affichage de chaque message
+
 while ($donnees = $reponse->fetch())
 	{
-		echo '<p><strong>' . htmlspecialchars($donnees['titre']) . '</strong> :' . '</p>' .
-		'<p>' . htmlspecialchars($donnees['exo']) . ' <label for="reponse">Reponse 1:</label>
+		
+		echo '<div class="exo1"><p><strong>' . htmlspecialchars($donnees['titre']) . '</strong> :' . '</p>' .
+		'<p>' . htmlspecialchars($donnees['exo']) . '<label for="reponse1">Reponse 1:</label>
 		<select name="reponse1" id="reponse1">
-		<option value="idea" selected>Idée</option>
-		<option value="idea2">Idée 2</option>
-		<option value="idea3">Idée 3</option>
+		<option value="idea" selected>' . htmlspecialchars($donnees['reponse01']) . '</option>
+		<option value="idea2">' . htmlspecialchars($donnees['reponse2']) . '</option>
+		<option value="idea3">' . htmlspecialchars($donnees['reponse3']) . '</option>
 		</select>
-		.</p>';
+		</p>' . 
+		'</div>';
 	}
+
+
+
 $reponse->closeCursor();
 
 ?>
 
+	
 	
 
  	<p><button class="boutonIndice">Besoin d'un indice (2)</button>
