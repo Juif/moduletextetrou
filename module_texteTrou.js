@@ -16,33 +16,32 @@ $buttonVar.click(function()
 	}
 })
 //bouton valider et compare les réponses
-	$("#boutonValider").click(function()
+	$("#boutonValider").on('click', function()
 		{
 			if ($("#reponse1").val()==="idea2")
 				{
-					console.log("Bravo!");
 					$('#reponse1').css
 					("background-color", "green");
 				}
 
 			else 
 				{
-					console.log("Dommage!");
-					$('#reponse1').css(
+						$('#reponse1').css(
 						"background-color", "red");
 				}
-		})
-	$("#boutonAffExo1").on('click', function()
-		{
-			$('.exo1').show();
 		})
 
 	$("#boutonHideExo1").on('click', function()
 		{
-			$('.exo1').hide();
+			$('#exo1').hide();
+		});
+
+	$("#boutonAffExo1").on('click', function()
+		{
+			$('#exo1').show();
 		})
-
-
+	
 
 });
+
 
