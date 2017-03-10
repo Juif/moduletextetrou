@@ -42,7 +42,7 @@ $reponse = $bdd->query('SELECT titre, exo, reponse01, reponse2, reponse3 FROM ad
 while ($donnees = $reponse->fetch())
 	{
 		
-		echo '<div class="exo1"><p><strong>' . htmlspecialchars($donnees['titre']) . '</strong> :' . '</p>' .
+		echo '<div id="exo1">' . '<p><strong>' . htmlspecialchars($donnees['titre']) . '</strong> :' . '</p>' .
 		'<p>' . htmlspecialchars($donnees['exo']) . '<label for="reponse1">Reponse 1:</label>
 		<select name="reponse1" id="reponse1">
 		<option value="idea" selected>' . htmlspecialchars($donnees['reponse01']) . '</option>
