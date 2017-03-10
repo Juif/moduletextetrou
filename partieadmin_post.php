@@ -9,8 +9,8 @@ catch(Exception $e)
 	die('Erreur : ' .$e->getMessage());
 }
 
-$req = $bdd->prepare('INSERT INTO admin (titre, exo) VALUES(?,?)');
-$req->execute(array($_POST['titre'], $_POST['exo']));
+$req = $bdd->prepare('INSERT INTO admin (titre, exo, reponse01, reponse2, reponse3) VALUES(?,?,?,?,?)');
+$req->execute(array($_POST['titre'], $_POST['exo'], $_POST['reponse01'], $_POST['reponse2'], $_POST['reponse3']));
 
 header('Location:partieadmin.php');
 ?>
