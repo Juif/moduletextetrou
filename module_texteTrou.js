@@ -32,6 +32,16 @@ $buttonVar.click(function()
 						"background-color", "red");
 				}
 		})
+	$("#boutonAffExo1").on('click', function()
+		{
+			$('.exo1').show();
+		})
+
+	$("#boutonHideExo1").on('click', function()
+		{
+			$('.exo1').hide();
+		})
+
 
 
 });
