@@ -56,10 +56,10 @@ include('config.php');
 
 
 
-                <p><button class="boutonIndice">Besoin d'un indice (2)</button>
-                </p>
-                <p><button id ="boutonValider">Valider</button></p>
-                <ul class="indice"></ul>
+               <p><button type="button" class="btn btn-info" id="boutonIndice">Besoin d'un indice (2)</button>
+	 </p>
+	 <p><button type="button" class="btn btn-primary" id ="boutonValider">Valider</button></p>
+	 <ul class="indice"></ul>
 
 </body>
 </html>
