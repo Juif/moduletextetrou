@@ -2,7 +2,7 @@ $(document).ready(function(){
     var hideTips= ["<li>indice premier</li> ", "<li>indice second</li>"];
     var i=0;
     var nmbreIndices = hideTips.length;
-    $buttonVar=$('.boutonIndice');
+    $buttonVar=$('#boutonIndice');
     $indiceVar=$('.indice');
 
     $buttonVar.click(function()
