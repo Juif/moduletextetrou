@@ -12,8 +12,11 @@ include('config.php');
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="module_texteTrou.css">
-    <script src="jquery-3.1.1.js"></script>
-    <script src="module_texteTrou.js"></script>
+	<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+   	<script src="jquery-3.1.1.js"></script>
+    	<script src="module_texteTrou.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/jquery.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <title></title>
 </head>
 <body>
