@@ -1,0 +1,180 @@
+
+<?php
+// affichage des erreur php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include('config.php');
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="module_texteTrou.css">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="jquery-3.1.1.js"></script>
+    <script src="module_texteTrou.js"></script>
+
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+<body>
+
+<div id="title">
+
+    <h1>Module texte trou</h1>
+
+
+    <div id="progression_bar"><div class="bar_fixed"></div></div>
+
+
+</div>
+
+
+        <a href="?idExercice=1" id="exo1">Exercice 1</a>
+        <a href="?idExercice=2" id="exo2">Exercice 2</a>
+
+               <?php
+
+               $idExercice = $_GET["idExercice"];
+
+               include("config.php");
+
+
+               function scrollbarrTitle($idExercice,$bdd)
+
+
+                {
+                $reponse = $bdd->query('SELECT id_exercic, titreScroll, id FROM scrollBarr
+                             WHERE scrollBarr.id_exercic = "' . $idExercice . '" ');
+
+                    $title = array();
+                    $title['id_exercic']= array();
+                    $title['id']= array();
+                    $title['titreScroll']= array();
+
+                    while ($donnees = $reponse->fetch())
+                    {
+
+                        array_push($title['id_exercic'], $donnees['id_exercic']);
+                        array_push($title['id'], $donnees['id']);
+                        array_push($title['titreScroll'], $donnees['titreScroll']);
+                    }
+
+
+                    return $title;
+
+                }
+
+               $title = scrollbarrTitle($idExercice,$bdd);
+
+
+
+               for ($i=0 ; $i<count($title['titreScroll']);$i++)
+               {
+
+                   echo $title ['titreScroll'][$i] ;
+
+               }
+
+
+
+
+                //appel boucle multi scrollbar
+
+                //$idScrollBarr
+
+
+
+
+                /**$result = $reponse->fetchAll(PDO::FETCH_ASSOC);
+
+                print_r($result);
+
+                $data["titreEx"] = $result[0]["titreEx"];
+                $data["titreScroll"] = $result[0]["titreScroll"];
+
+                for ($index = 0; $index < sizeof($result); $index++) {
+                    $data["choix"][$index + 1] = $result[$index]["choix"];
+                }
+
+                print_r($data);*/
+
+
+
+                /*$index = 0;
+
+                while ($donnees = $reponse->fetch())
+                    {
+
+                        $data["php f"][$index] = $donnees["titreEx"];
+                        $data["choix"][$index] = $donnees["choix"];
+
+
+                        $index++;
+
+                    }
+                var_dump($data);*/
+
+
+/*for ($i=0, $i < 10, $i++) {
+    for ($j=0, $j < 10, $j++) {
+        $a = $j;
+    }
+}*/
+
+
+               /**
+                * @param $idExercice
+                * @param $bdd
+                * @return array
+                */
+               function rechercheOptions($idExercice, $bdd)
+                {
+                    $reponse = $bdd->query('SELECT id,choix, id_scrollBarr FROM choix	 WHERE id_ex="' . $idExercice . '" ');
+
+
+                    $res = array();
+                    $res['id'] = array();
+                    $res['id_scrollBarr'] = array();
+                    $res['choix'] = array();
+
+
+
+                    while ($donnees = $reponse->fetch()) {
+                        array_push($res['id'], $donnees['id']);
+                        array_push($res['id_scrollBarr'], $donnees['id_scrollBarr']);
+                        array_push($res['choix'],$donnees['choix']);
+
+                    }
+
+                    return $res;
+
+                }
+
+                $res = rechercheOptions($idExercice,$bdd);
+
+                for ($i =0 ; $i<count($res['choix']);$i++)
+                {
+                    echo "<li>". $res['choix'][$i] . "</li>";
+
+                }
+
+
+               //$reponse->closeCursor();
+
+//function likscroll2choix($idExercice,$title, $bdd) ;
+
+//$donnees = $bdd->multi_query ('SELECT choix.choix FROM choix WHERE choix.id_scrollBarr="' . $title['id'] . '" AND choix.id_ex= "' . $idExercice . '" ' );
+
+
+
+               /* <- <p><button type="button" class="btn btn-info" id="boutonIndice">Besoin d'un indice (2)</button>
+                </p>
+                <p><button type="button" class="btn btn-primary" id ="boutonValider">Valider</button></p>
+                <ul class="indice"></ul> ->*/
+  ?>
+</body>
+</html>
