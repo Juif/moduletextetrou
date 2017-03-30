@@ -1,0 +1,31 @@
+       function indices($idExercice, $bdd)
+               {
+
+                   $indice = $bdd->query('SELECT indice FROM indice WHERE id_exercice="' . $idExercice . '" ');
+
+                   $dons = array();
+                   $dons['indice'] = array();
+
+                   while ($done = $indice->fetch()) {
+
+                       array_push($dons['indice'], $done['indice']);
+
+
+                   }
+
+                   return $dons;
+
+               }
+
+           $dons = indices($idExercice, $bdd);
+
+    $arrayLengths=count($dons['indice']);
+    for ($i =0 ; $i<$arrayLengths;$i++){
+
+        {
+
+            echo "<li>" . $dons['indice'][$i] . "</li>";
+
+
+        }}
+
