@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     });
 
-
+//changer l'adresse du load par les noms des fichiers
 
     $('#idExercice2').on('click',function() {
 
