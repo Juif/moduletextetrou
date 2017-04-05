@@ -22,11 +22,7 @@
 
         <article id="reponses">
             <div id="exo1">
-                <div id="accueil">
-                    <p>Cliquez sur un exercice ci-dessus.</p>
-                </div>
-
-
+                
                 <div id="partie2">
                     <?php
 
